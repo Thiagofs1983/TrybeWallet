@@ -27,7 +27,7 @@ class TableExpenses extends Component {
           </tr>
           {
             expenses.map((expense, i) => (
-              <tr key={ i }>
+              <tr key={ expense.id }>
                 <td>{ expense.description }</td>
                 <td>{ expense.tag }</td>
                 <td>{ expense.method }</td>
