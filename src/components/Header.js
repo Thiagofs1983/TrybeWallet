@@ -4,14 +4,20 @@ import { connect } from 'react-redux';
 
 class Header extends Component {
   render() {
-    const { emailProps } = this.props;
+    const { emailProps, expenses } = this.props;
+    const expense = expenses.map((expens) => (
+      parseFloat(expens.value) * parseFloat(expens.exchangeRates[expens.currency].ask)
+    ));
+    const result = expense.length > 0 ? expense.reduce((acc, curr) => acc + curr) : 0;
     return (
       <header>
         <span data-testid="email-field">
           { `Email: ${emailProps}` }
         </span>
         <span data-testid="total-field">
-          0
+          {
+            result.toFixed(2)
+          }
         </span>
         <span data-testid="header-currency-field">
           BRL
@@ -23,10 +29,12 @@ class Header extends Component {
 
 Header.propTypes = {
   emailProps: PropTypes.string.isRequired,
+  expenses: PropTypes.arrayOf(PropTypes.objectOf).isRequired,
 };
 
 const mapStateToProps = (state) => ({
   emailProps: state.user.email,
+  expenses: state.wallet.expenses,
 });
 
 export default connect(mapStateToProps)(Header);

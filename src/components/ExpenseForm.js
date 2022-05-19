@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { fetchExpenses } from '../actions';
 
 class ExpenseForm extends Component {
   constructor() {
@@ -8,8 +9,8 @@ class ExpenseForm extends Component {
     this.state = {
       value: '',
       description: '',
-      coins: 'USD',
-      payment: 'Dinheiro',
+      currency: 'USD',
+      method: 'Dinheiro',
       tag: 'Alimentação',
     };
   }
@@ -20,13 +21,21 @@ class ExpenseForm extends Component {
     });
   }
 
+  handleSubmit = () => {
+    const { fetchExpense } = this.props;
+    fetchExpense(this.state);
+    this.setState({
+      value: '',
+    });
+  }
+
   render() {
     const { currencies } = this.props;
     const {
       value,
       description,
-      coins,
-      payment,
+      currency,
+      method,
       tag,
     } = this.state;
     return (
@@ -56,9 +65,9 @@ class ExpenseForm extends Component {
         <label htmlFor="coin">
           Moeda
           <select
-            name="coins"
+            name="currency"
             id="coin"
-            value={ coins }
+            value={ currency }
             onChange={ this.handleChange }
           >
             { currencies.map((coin) => (
@@ -66,12 +75,12 @@ class ExpenseForm extends Component {
             ))}
           </select>
         </label>
-        <label htmlFor="payment">
+        <label htmlFor="method">
           Método de pagamento
           <select
-            name="payment"
-            id="payment"
-            value={ payment }
+            name="method"
+            id="method"
+            value={ method }
             onChange={ this.handleChange }
             data-testid="method-input"
           >
@@ -96,6 +105,12 @@ class ExpenseForm extends Component {
             <option value="Saúde">Saúde</option>
           </select>
         </label>
+        <button
+          type="button"
+          onClick={ this.handleSubmit }
+        >
+          Adicionar despesa
+        </button>
       </form>
     );
   }
@@ -103,10 +118,15 @@ class ExpenseForm extends Component {
 
 ExpenseForm.propTypes = {
   currencies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  fetchExpense: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   currencies: state.wallet.currencies,
 });
 
-export default connect(mapStateToProps)(ExpenseForm);
+const mapDispatchToProps = (dispatch) => ({
+  fetchExpense: (state) => dispatch(fetchExpenses(state)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ExpenseForm);
