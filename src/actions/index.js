@@ -2,7 +2,7 @@
 export const ADD_EMAIL = 'ADD_EMAIL';
 export const ADD_CURRENCIES = 'ADD_CURRENCIES';
 export const ADD_EXPENSES = 'ADD_EXPENSES';
-export const ADD_EXCHANGE_RATES = 'ADD_EXCHANGE_RATES';
+export const REMOVE = 'REMOVE';
 
 export const addEmailAction = (payload) => ({
   type: ADD_EMAIL,
@@ -20,11 +20,11 @@ export const addExpenses = (payload, rates) => ({
   rates,
 });
 
-/* export const addExchangeRates = (rates) => ({
-  type: ADD_EXCHANGE_RATES,
-  rates,
+export const removeExpense = (expense) => ({
+  type: REMOVE,
+  expense,
 });
- */
+
 export const fetchCurrencies = () => (
   async (dispatch) => {
     try {
