@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchExpenses } from '../actions';
+import styles from '../styles/ExpenseForm.module.css';
 
 class ExpenseForm extends Component {
   constructor() {
@@ -39,13 +40,14 @@ class ExpenseForm extends Component {
       tag,
     } = this.state;
     return (
-      <form action="">
+      <form className={ styles.container } action="">
         <label htmlFor="value">
           Valor
           <input
-            type="text"
+            type="number"
             name="value"
             id="value"
+            required
             value={ value }
             onChange={ this.handleChange }
             data-testid="value-input"
@@ -57,6 +59,7 @@ class ExpenseForm extends Component {
             type="text"
             name="description"
             id="description"
+            required
             value={ description }
             onChange={ this.handleChange }
             data-testid="description-input"
@@ -107,6 +110,7 @@ class ExpenseForm extends Component {
         </label>
         <button
           type="button"
+          disabled={ description.length < 1 || value.length < 1 }
           onClick={ this.handleSubmit }
         >
           Adicionar despesa

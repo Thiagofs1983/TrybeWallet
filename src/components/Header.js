@@ -19,7 +19,7 @@ class Header extends Component {
           </span>
           <span data-testid="total-field">
             {
-              `R$ ${result.toFixed(2)}`
+              result.toFixed(2)
             }
           </span>
           <p data-testid="header-currency-field">

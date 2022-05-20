@@ -1,0 +1,41 @@
+.container {
+  align-items: center;
+  background-color: var(--subtitle);
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px 0;
+}
+
+.container input , select {
+  border: none;
+  color: var(--main-text);
+  margin-left: 8px;
+  text-align: center;
+}
+
+.container select {
+  padding: 2px;
+}
+
+.container input {
+  padding: 8px;
+}
+
+.container button {
+  background-color: var(--button);
+  border: none;
+  box-shadow: 1px 1px 1px 1px var(--main-text);
+  color: var(--button-text);
+  padding: 10px;
+  transition: 0.2s;
+}
+
+.container button:hover {
+  background-color: var(--button-hover);
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.container button:active {
+  background-color: var(--button);
+}

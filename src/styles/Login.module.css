@@ -50,4 +50,5 @@
 .container form button:hover {
   background-color: var(--button-hover);
   box-shadow: none;
+  cursor: pointer;
 }
