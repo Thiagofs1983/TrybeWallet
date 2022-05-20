@@ -27,6 +27,7 @@ class ExpenseForm extends Component {
     fetchExpense(this.state);
     this.setState({
       value: '',
+      description: '',
     });
   }
 
@@ -47,7 +48,7 @@ class ExpenseForm extends Component {
             type="number"
             name="value"
             id="value"
-            required
+            autoComplete="none"
             value={ value }
             onChange={ this.handleChange }
             data-testid="value-input"
@@ -59,7 +60,7 @@ class ExpenseForm extends Component {
             type="text"
             name="description"
             id="description"
-            required
+            autoComplete="none"
             value={ description }
             onChange={ this.handleChange }
             data-testid="description-input"

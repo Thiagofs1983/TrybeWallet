@@ -14,10 +14,14 @@
 }
 
 .container select {
+  background-color: var(--main-element);
+  outline: none;
   padding: 2px;
 }
 
 .container input {
+  background-color: var(--main-element);
+  outline: none;
   padding: 8px;
 }
 
@@ -26,7 +30,7 @@
   border: none;
   box-shadow: 1px 1px 1px 1px var(--main-text);
   color: var(--button-text);
-  padding: 10px;
+  padding: 8px;
   transition: 0.2s;
 }
 
