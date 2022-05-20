@@ -1,6 +1,6 @@
 .container {
   align-items: center;
-  background-color: var(--subtitle);
+  background-color: var(--title);
   display: flex;
   justify-content: space-evenly;
   padding: 15px 0;

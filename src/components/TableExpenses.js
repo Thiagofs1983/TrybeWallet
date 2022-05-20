@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { removeExpense } from '../actions';
+import styles from '../styles/TableExpenses.module.css';
 
 class TableExpenses extends Component {
   handleRemove = (i) => {
@@ -12,7 +13,7 @@ class TableExpenses extends Component {
   render() {
     const { expenses } = this.props;
     return (
-      <table>
+      <table className={ styles.container }>
         <tbody>
           <tr>
             <th>Descrição</th>
