@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import styles from '../styles/Header.module.css';
 
 class Header extends Component {
   render() {
@@ -10,18 +11,21 @@ class Header extends Component {
     ));
     const result = expense.length > 0 ? expense.reduce((acc, curr) => acc + curr) : 0;
     return (
-      <header>
-        <span data-testid="email-field">
-          { `Email: ${emailProps}` }
-        </span>
-        <span data-testid="total-field">
-          {
-            result.toFixed(2)
-          }
-        </span>
-        <span data-testid="header-currency-field">
-          BRL
-        </span>
+      <header className={ styles.container }>
+        <h1>TRYBE WALLET</h1>
+        <div>
+          <span data-testid="email-field">
+            {`E-mail: ${emailProps}`}
+          </span>
+          <span data-testid="total-field">
+            {
+              `R$ ${result.toFixed(2)}`
+            }
+          </span>
+          <p data-testid="header-currency-field">
+            BRL
+          </p>
+        </div>
       </header>
     );
   }
