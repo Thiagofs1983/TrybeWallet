@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addEmailAction } from '../actions';
+import styles from '../styles/Login.module.css';
 
 class Login extends React.Component {
   constructor() {
@@ -33,7 +34,7 @@ class Login extends React.Component {
       password,
     } = this.state;
     return (
-      <main>
+      <main className={ styles.container }>
         <form action="">
           <h1>TRYBE WALLET</h1>
           <input
@@ -41,6 +42,7 @@ class Login extends React.Component {
             name="email"
             value={ email }
             placeholder="E-mail"
+            autoComplete="none"
             onChange={ this.handleChange }
             data-testid="email-input"
           />
