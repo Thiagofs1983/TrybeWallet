@@ -1,6 +1,7 @@
 .container {
   align-items: center;
   background-color: var(--title);
+  color: var(--main-color);
   display: flex;
   justify-content: space-evenly;
   padding: 15px 0;
