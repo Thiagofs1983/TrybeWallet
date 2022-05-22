@@ -13,6 +13,7 @@ class ExpenseForm extends Component {
       currency: 'USD',
       method: 'Dinheiro',
       tag: 'Alimentação',
+      id: 0,
     };
   }
 
@@ -25,10 +26,11 @@ class ExpenseForm extends Component {
   handleSubmit = () => {
     const { fetchExpense } = this.props;
     fetchExpense(this.state);
-    this.setState({
+    this.setState((prevState) => ({
       value: '',
       description: '',
-    });
+      id: prevState.id + 1,
+    }));
   }
 
   render() {

@@ -17,7 +17,7 @@ const walletReducer = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       expenses: [...state.expenses,
-        { ...action.payload, id: state.expenses.length, exchangeRates: action.rates },
+        { ...action.payload, exchangeRates: action.rates },
       ],
     };
   case REMOVE:
