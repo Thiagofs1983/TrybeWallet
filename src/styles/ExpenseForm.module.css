@@ -44,3 +44,10 @@
 .container button:active {
   background-color: var(--button);
 }
+
+.container button:disabled {
+  background-color: rgba(140, 120, 81, 0.7);
+  box-shadow: none;
+  color: rgba(255, 255, 254, 0.2);
+  cursor: auto;
+}

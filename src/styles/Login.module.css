@@ -52,3 +52,10 @@
   box-shadow: none;
   cursor: pointer;
 }
+
+.container form button:disabled {
+  background-color: rgba(140, 120, 81, 0.7);
+  box-shadow: none;
+  color: rgba(255, 255, 254, 0.3);
+  cursor: auto;
+}
