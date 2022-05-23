@@ -5,9 +5,9 @@ import { removeExpense } from '../actions';
 import styles from '../styles/TableExpenses.module.css';
 
 class TableExpenses extends Component {
-  handleRemove = (i) => {
+  handleRemove = (expense) => {
     const { remove } = this.props;
-    remove(i);
+    remove(expense);
   }
 
   render() {
@@ -27,7 +27,7 @@ class TableExpenses extends Component {
             <th>Editar/Excluir</th>
           </tr>
           {
-            expenses.map((expense, i) => (
+            expenses.map((expense) => (
               <tr key={ expense.id }>
                 <td>{ expense.description }</td>
                 <td>{ expense.tag }</td>
@@ -47,7 +47,7 @@ class TableExpenses extends Component {
                 <td>
                   <button
                     type="button"
-                    onClick={ () => this.handleRemove(i) }
+                    onClick={ () => this.handleRemove(expense.id) }
                     data-testid="delete-btn"
                   >
                     Excluir
