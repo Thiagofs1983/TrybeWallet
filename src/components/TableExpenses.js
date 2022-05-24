@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { ImBin } from 'react-icons/im';
 import { removeExpense } from '../actions';
 import styles from '../styles/TableExpenses.module.css';
 
@@ -45,13 +46,11 @@ class TableExpenses extends Component {
                 </td>
                 <td>Real</td>
                 <td>
-                  <button
-                    type="button"
+                  <ImBin
                     onClick={ () => this.handleRemove(expense.id) }
+                    cursor="pointer"
                     data-testid="delete-btn"
-                  >
-                    Excluir
-                  </button>
+                  />
                 </td>
               </tr>
             ))
