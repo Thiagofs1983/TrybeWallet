@@ -24,16 +24,9 @@
   background-color: var(--main-element);
 }
 
-.container button {
-  background-color: rgb(184, 7, 7);
-  border: none;
-  box-shadow: 1px 1px 1px 1px var(--main-text);
-  color: var(--button-text);
-  transition: 0.2s;
-}
-
-.container button:hover {
-  background-color: var(--button-hover);
-  box-shadow: none;
+.incon:hover {
+  color: red;
   cursor: pointer;
+  font-size: large;
+  transition: 0.3s;
 }

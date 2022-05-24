@@ -48,7 +48,7 @@ class TableExpenses extends Component {
                 <td>
                   <ImBin
                     onClick={ () => this.handleRemove(expense.id) }
-                    cursor="pointer"
+                    className={ styles.incon }
                     data-testid="delete-btn"
                   />
                 </td>
