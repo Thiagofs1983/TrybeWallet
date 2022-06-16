@@ -1,16 +1,14 @@
-# 🚧 README em construção 🚧
+# Trybe Wallet
 
-<!-- Olá, Tryber!
+Nesse projeto o desafio era, desenvolver uma aplicação React que use Redux como ferramenta de manipulação de estado.
 
-Esse é apenas um arquivo inicial para o README do seu projeto.
+Para tal, foi necessário fazer uma requisição assíncrona a API com a action do Redux, guardando as moedas e suas respectivas cotações no momento em que a despesa é adicionada, podendo essa variar conforme a cotação da moeda varia durante o dia. O e-mail do usuário logado, juntamente com a soma das despesas atualizadas devem aparecer no cabeçalho .
 
-É essencial que você preencha esse documento por conta própria, ok?
+Deve ser possível também excluir ítens adicionados na lista de despesas.
 
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-
-⚠️ IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
-
--->
+Skills para realizar o projeto:
+- JavaScript
+- React
+- Redux
+- CSS
+- CSS Module
