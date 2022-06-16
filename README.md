@@ -6,7 +6,7 @@ Para tal, foi necessário fazer uma requisição assíncrona a API com a action 
 
 Deve ser possível também excluir ítens adicionados na lista de despesas.
 
-Skills para realizar o projeto:
+### Skills para realizar o projeto:
 - JavaScript
 - React
 - Redux
