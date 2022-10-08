@@ -12,3 +12,5 @@ Deve ser possível também excluir ítens adicionados na lista de despesas.
 - Redux
 - CSS
 - CSS Module
+
+[<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin" height='30'>](https://www.linkedin.com/in/fsthiago/)
